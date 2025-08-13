@@ -134,7 +134,7 @@ const FinancialDashboard = () => {
           <h2 className="text-xl font-bold text-gray-900 mb-2">Connection Error</h2>
           <p className="text-gray-600 mb-4">{error}</p>
           <button onClick={handleRefresh} className="btn-primary">
-            <Refresh size={16} className="inline mr-2" />
+            <RefreshCw size={16} className="inline mr-2" />
             Retry Connection
           </button>
         </div>
