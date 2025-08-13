@@ -1,34 +1,168 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* JP Morgan Professional Financial Dashboard Styles */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom JP Morgan color palette */
+:root {
+  --jp-blue: #0066cc;
+  --jp-dark-blue: #003d7a;
+  --jp-light-blue: #4da6ff;
+  --jp-green: #00d4aa;
+  --jp-red: #ff6b6b;
+  --jp-gray: #6b7280;
+  --jp-light-gray: #f3f4f6;
+  --jp-dark-gray: #1f2937;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.App {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Professional card styling */
+.financial-card {
+  @apply bg-white rounded-lg shadow-lg border border-gray-200 p-6 transition-all duration-200 hover:shadow-xl;
 }
 
-.App-link {
-    color: #61dafb;
+.financial-card:hover {
+  transform: translateY(-2px);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Custom scrollbar for data tables */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Professional typography */
+.metric-value {
+  @apply text-2xl font-bold text-gray-900;
+}
+
+.metric-label {
+  @apply text-sm text-gray-600 font-medium uppercase tracking-wide;
+}
+
+.metric-change-positive {
+  @apply text-green-600 font-semibold;
+}
+
+.metric-change-negative {
+  @apply text-red-600 font-semibold;
+}
+
+/* Loading animations */
+.loading-shimmer {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* Professional table styling */
+.data-table {
+  @apply w-full border-collapse;
+}
+
+.data-table th {
+  @apply bg-gray-50 px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200;
+}
+
+.data-table td {
+  @apply px-4 py-3 whitespace-nowrap text-sm border-b border-gray-100;
+}
+
+.data-table tr:hover {
+  @apply bg-gray-50;
+}
+
+/* Chart container styling */
+.chart-container {
+  @apply w-full h-96 relative;
+}
+
+.chart-loading {
+  @apply flex items-center justify-center h-96 text-gray-500;
+}
+
+/* Header styling */
+.dashboard-header {
+  @apply bg-white shadow-sm border-b border-gray-200 px-6 py-4 mb-6;
+}
+
+.dashboard-title {
+  @apply text-2xl font-bold text-gray-900 mb-2;
+}
+
+.dashboard-subtitle {
+  @apply text-sm text-gray-600;
+}
+
+/* Performance indicators */
+.performance-indicator {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.performance-positive {
+  @apply bg-green-100 text-green-800;
+}
+
+.performance-negative {
+  @apply bg-red-100 text-red-800;
+}
+
+.performance-neutral {
+  @apply bg-gray-100 text-gray-800;
+}
+
+/* Professional button styling */
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+}
+
+/* Status indicators */
+.status-online {
+  @apply inline-block w-2 h-2 bg-green-400 rounded-full mr-2;
+}
+
+.status-offline {
+  @apply inline-block w-2 h-2 bg-red-400 rounded-full mr-2;
+}
+
+/* Professional grid layout */
+.dashboard-grid {
+  @apply grid gap-6 mb-6;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    @apply grid-cols-1;
+  }
+  
+  .financial-card {
+    @apply p-4;
+  }
+  
+  .chart-container {
+    @apply h-64;
+  }
 }
