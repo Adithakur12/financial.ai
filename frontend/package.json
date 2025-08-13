@@ -59,8 +59,8 @@
     "react-virtualized": "^9.22.6"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
+    "start": "node --max-old-space-size=4096 node_modules/.bin/craco start",
+    "build": "node --max-old-space-size=4096 node_modules/.bin/craco build",
     "test": "craco test"
   },
   "browserslist": {
