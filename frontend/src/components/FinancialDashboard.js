@@ -168,7 +168,7 @@ const FinancialDashboard = () => {
               disabled={loading}
               className="btn-secondary flex items-center space-x-2"
             >
-              <Refresh size={16} className={loading ? 'animate-spin' : ''} />
+              <RefreshCw size={16} className={loading ? 'animate-spin' : ''} />
               <span>Refresh</span>
             </button>
           </div>
