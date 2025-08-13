@@ -6,7 +6,7 @@ import MarketHeatmap from './MarketHeatmap';
 import CorrelationMatrix from './CorrelationMatrix';
 import SymbolSelector from './SymbolSelector';
 import PerformanceMetrics from './PerformanceMetrics';
-import { TrendingUp, TrendingDown, Activity, BarChart3, Zap, Refresh } from 'lucide-react';
+import { TrendingUp, TrendingDown, Activity, BarChart3, Zap, RefreshCw } from 'lucide-react';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
